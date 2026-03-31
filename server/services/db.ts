@@ -9,7 +9,12 @@ if (!rawDatabaseUrl) {
   throw new Error('Database URL is missing. Set DATABASE_URL (preferred) or VITE_DATABASE_URL.');
 }
 
-const DATABASE_URL = rawDatabaseUrl.trim().replace(/^['"]|['"]$/g, '');
+const DATABASE_URL = rawDatabaseUrl
+  .trim()
+  .replace(/^['"]|['"]$/g, '')
+  .replace(/^DATABASE_URL\s*=\s*/i, '')
+  .replace(/\\\s+/g, '')
+  .replace(/\s+/g, '');
 
 if (!/^postgres(ql)?:\/\//i.test(DATABASE_URL)) {
   throw new Error('Invalid database URL format. Expected: postgresql://user:password@host/db?sslmode=require');
