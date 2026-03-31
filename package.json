@@ -91,6 +91,7 @@
     "tsx": "^4.21.0",
     "vaul": "^0.9.9",
     "vite": "^5.4.19",
+    "vite-plugin-pwa": "^1.2.0",
     "zod": "^3.25.76",
     "zustand": "^5.0.12"
   },
@@ -116,7 +117,6 @@
     "lovable-tagger": "^1.1.13",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite-plugin-pwa": "^1.2.0",
     "vitest": "^3.2.4"
   }
 }
