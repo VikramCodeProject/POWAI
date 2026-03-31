@@ -3,8 +3,17 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const DATABASE_URL = process.env.VITE_DATABASE_URL;
-if (!DATABASE_URL) throw new Error('VITE_DATABASE_URL not set in .env');
+const rawDatabaseUrl = process.env.DATABASE_URL || process.env.VITE_DATABASE_URL || process.env.NEON_DATABASE_URL;
+
+if (!rawDatabaseUrl) {
+  throw new Error('Database URL is missing. Set DATABASE_URL (preferred) or VITE_DATABASE_URL.');
+}
+
+const DATABASE_URL = rawDatabaseUrl.trim().replace(/^['"]|['"]$/g, '');
+
+if (!/^postgres(ql)?:\/\//i.test(DATABASE_URL)) {
+  throw new Error('Invalid database URL format. Expected: postgresql://user:password@host/db?sslmode=require');
+}
 
 export const sql = neon(DATABASE_URL);
 
