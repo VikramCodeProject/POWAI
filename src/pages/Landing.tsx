@@ -251,22 +251,22 @@ const Landing = () => {
             <div className="bg-primary-fixed-dim/20 w-12 h-12 flex items-center justify-center rounded-lg mb-8">
               <span className="material-symbols-outlined text-primary">psychology</span>
             </div>
-            <h2 className="text-4xl font-bold font-headline mb-6 leading-tight">Focus on the Process, Not the Product.</h2>
-            <p className="text-on-surface-variant leading-relaxed mb-8 font-body">
+            <h2 className="text-3xl sm:text-4xl max-[380px]:text-2xl font-bold font-headline mb-5 sm:mb-6 leading-tight">Focus on the Process, Not the Product.</h2>
+            <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed mb-6 sm:mb-8 font-body max-[380px]:text-[13px]">
               Modern education faces unprecedented challenges with generative AI. POWAI tracks the pauses, the deletions, and the gradual evolution of assignments that define a student's actual learning journey.
             </p>
-            <ul className="space-y-4 font-body">
-              <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                <span className="font-medium">Submission timeline tracking</span>
+            <ul className="space-y-3 sm:space-y-4 font-body max-[380px]:space-y-2.5">
+              <li className="flex items-center gap-2.5 sm:gap-3">
+                <span className="material-symbols-outlined text-primary text-[20px] sm:text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                <span className="font-medium text-sm sm:text-base max-[380px]:text-[13px]">Submission timeline tracking</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                <span className="font-medium">Large-paste and AI-generation detection</span>
+              <li className="flex items-center gap-2.5 sm:gap-3">
+                <span className="material-symbols-outlined text-primary text-[20px] sm:text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                <span className="font-medium text-sm sm:text-base max-[380px]:text-[13px]">Large-paste and AI-generation detection</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                <span className="font-medium">Behavioral anomaly highlighting</span>
+              <li className="flex items-center gap-2.5 sm:gap-3">
+                <span className="material-symbols-outlined text-primary text-[20px] sm:text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                <span className="font-medium text-sm sm:text-base max-[380px]:text-[13px]">Behavioral anomaly highlighting</span>
               </li>
             </ul>
           </div>
