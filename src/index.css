@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 219 16% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 20% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 53%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.04), 0 1px 2px -1px hsl(0 0% 0% / 0.04);
+    --shadow-card-hover: 0 4px 12px -2px hsl(0 0% 0% / 0.08), 0 2px 4px -2px hsl(0 0% 0% / 0.04);
+    --shadow-lg: 0 10px 25px -5px hsl(0 0% 0% / 0.06), 0 8px 10px -6px hsl(0 0% 0% / 0.04);
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 219 16% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-500;
+  }
+  .dark body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Dark Mode Comprehensive Overrides */
+  .dark .bg-surface-container-lowest { @apply bg-slate-950 !important; }
+  .dark .bg-surface-container-low { @apply bg-slate-900 !important; }
+  .dark .bg-surface-container-low\/50 { @apply bg-slate-900/50 !important; }
+  .dark .bg-surface-container-low\/30 { @apply bg-slate-900/30 !important; }
+  .dark .bg-surface-container-high { @apply bg-slate-800 !important; }
+  .dark .bg-surface-container-highest { @apply bg-slate-800 !important; }
+  .dark .bg-surface-container { @apply bg-slate-900 !important; }
+  .dark .bg-surface-bright { @apply bg-slate-800 !important; }
+
+  .dark .bg-ivory { @apply bg-slate-950 !important; }
+  .dark .bg-white { @apply bg-slate-950 !important; }
+  .dark .bg-white\/50 { @apply bg-slate-900/50 !important; }
+  .dark .bg-on-background { @apply bg-blue-600 !important; }
+  .dark .bg-surface-variant { @apply bg-slate-800 !important; }
+  
+  .dark .bg-primary-container\/30 { @apply bg-blue-900/30 !important; }
+  .dark .bg-secondary-container\/30 { @apply bg-slate-800/30 !important; }
+  .dark .bg-error-container\/20 { @apply bg-red-900/30 !important; }
+  .dark .bg-error-container\/40 { @apply bg-red-900/50 !important; }
+  
+  /* Text Colors */
+  .dark .text-on-background { @apply text-slate-50 !important; }
+  .dark .text-on-surface { @apply text-slate-100 !important; }
+  .dark .text-on-surface-variant { @apply text-slate-400 !important; }
+  .dark .text-slate-ink { @apply text-slate-50 !important; }
+  .dark .text-slate-muted { @apply text-slate-400 !important; }
+  .dark .text-outline-variant { @apply text-slate-500 !important; }
+  .dark .text-outline { @apply text-slate-500 !important; }
+  .dark .text-surface-container-lowest { @apply text-slate-50 !important; }
+  
+  /* Dashboard / Literal Hex Values from Mockups */
+  .dark .bg-\[\#1E293B\] { @apply bg-blue-600 !important; }
+  .dark .text-\[\#1E293B\] { @apply text-slate-100 !important; }
+  .dark .text-\[\#545f73\] { @apply text-slate-400 !important; }
+  .dark .text-\[\#545f73\]\/70 { @apply text-slate-400/70 !important; }
+  .dark .bg-\[\#f8f9fa\] { @apply bg-slate-950 !important; }
+  .dark .bg-\[\#e2e9ec\] { @apply bg-slate-800 !important; }
+  .dark .border-\[\#545f73\] { @apply border-blue-400 !important; }
+
+  /* Borders */
+  .dark .border-outline-variant\/10 { @apply border-slate-800 !important; }
+  .dark .border-outline-variant\/5 { @apply border-slate-800 !important; }
+  .dark .border-slate-200\/50 { @apply border-slate-800 !important; }
+  .dark .border-slate-200 { @apply border-slate-700 !important; }
+  .dark .border-slate-100 { @apply border-slate-800 !important; }
+  .dark .border-surface-variant { @apply border-slate-800 !important; }
+}
+
+/* Floating blobs */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 20px) scale(0.95); }
+  66% { transform: translate(20px, -15px) scale(1.05); }
+}
+.animate-float-slow { animation: float-slow 20s ease-in-out infinite; }
+.animate-float-slow-reverse { animation: float-slow-reverse 25s ease-in-out infinite; }
+
+/* Loading line */
+@keyframes analyzing-line {
+  0% { width: 0%; left: 0%; }
+  50% { width: 40%; left: 30%; }
+  100% { width: 0%; left: 100%; }
+}
+.animate-analyzing-line { animation: analyzing-line 2s ease-in-out infinite; }
+
+/* Glass morphism utility */
+@layer components {
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border border-border/50;
+  }
+}
+
+.subtle-dot-bg {
+  background-image: radial-gradient(#abb3b7 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+}
+.dash-bg {
+  background-color: #f8f9fa;
+  background-image: radial-gradient(#abb3b7 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
+}
+.dark .dash-bg {
+  background-color: #020617;
+  background-image: radial-gradient(#334155 0.5px, transparent 0.5px);
+}
+
+/* Make native date picker icon readable in dark mode */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.35) contrast(1.2);
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+.dark input[type="date"]::-webkit-datetime-edit,
+.dark input[type="date"]::-webkit-datetime-edit-text,
+.dark input[type="date"]::-webkit-datetime-edit-month-field,
+.dark input[type="date"]::-webkit-datetime-edit-day-field,
+.dark input[type="date"]::-webkit-datetime-edit-year-field {
+  color: hsl(var(--foreground));
+}
