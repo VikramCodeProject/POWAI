@@ -12,11 +12,25 @@ if (!rawDatabaseUrl) {
 const normalizedInput = rawDatabaseUrl
   .trim()
   .replace(/^['"]|['"]$/g, '')
-  .replace(/^DATABASE_URL\s*=\s*/i, '')
+  .replace(/^DATABASE_URL\s*[:=]\s*/i, '')
   .replace(/\\\s+/g, '')
+  .replace(/\\\//g, '/')
+  .replace(/\\n|\\r/g, '')
   .replace(/\s+/g, '');
 
-const extractedUrl = normalizedInput.match(/postgres(?:ql)?:\/\/[^\s'"`]+/i)?.[0] || normalizedInput;
+const decodedInput = (() => {
+  try {
+    return decodeURIComponent(normalizedInput);
+  } catch {
+    return normalizedInput;
+  }
+})();
+
+const extractedUrl = (
+  normalizedInput.match(/postgres(?:ql)?:\/\/[^\s'"`]+/i)?.[0] ||
+  decodedInput.match(/postgres(?:ql)?:\/\/[^\s'"`]+/i)?.[0] ||
+  normalizedInput
+);
 
 const DATABASE_URL = extractedUrl;
 
