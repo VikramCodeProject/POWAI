@@ -3,11 +3,7 @@ services:
     name: powai
     env: node
     plan: free
-    buildCommand: npm install --include=dev && npm run build:render
-    startCommand: npm run start
+    buildCommand: NPM_CONFIG_PRODUCTION=false npm install && npm run build:render
+    startCommand: NODE_ENV=production npm run start
     healthCheckPath: /api/health
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: NPM_CONFIG_PRODUCTION
-        value: "false"
+    envVars: []
