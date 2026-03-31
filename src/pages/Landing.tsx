@@ -241,7 +241,7 @@ const Landing = () => {
 
         {/* Product Details / Asymmetric Layout */}
         <motion.section
-          className="max-w-7xl mx-auto px-6 mb-32 grid grid-cols-12 gap-12"
+          className="max-w-7xl mx-auto px-4 sm:px-6 mb-20 md:mb-32 grid grid-cols-12 gap-8 md:gap-12"
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.12 }}
@@ -271,9 +271,9 @@ const Landing = () => {
             </ul>
           </div>
           <div className="col-span-12 md:col-span-7 z-10">
-            <div className="relative bg-white/10 dark:bg-white/5 p-4 rounded-2xl backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg">
+            <div className="relative overflow-hidden bg-white/10 dark:bg-white/5 p-3 sm:p-4 rounded-2xl backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg">
               <img
-                className="rounded-xl shadow-2xl"
+                className="w-full h-auto max-h-[62vh] sm:max-h-[70vh] md:max-h-none object-cover rounded-xl shadow-2xl"
                 alt="Code editor"
                 src="/process-tracking.png"
               />
